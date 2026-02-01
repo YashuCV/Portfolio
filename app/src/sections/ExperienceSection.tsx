@@ -239,7 +239,7 @@ const ExperienceSection = () => {
             >
               <div className="aspect-[16/10] overflow-hidden">
                 <img
-                  src="/images/exp_workspace.jpg"
+                  src="./images/exp_workspace.jpg"
                   alt="Workspace"
                   className="w-full h-full object-cover"
                 />

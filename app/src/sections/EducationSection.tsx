@@ -131,7 +131,7 @@ const EducationSection = () => {
         className="absolute left-0 top-0 w-[55vw] h-full will-change-transform"
       >
         <img
-          src="/images/edu_classroom.jpg"
+          src="./images/edu_classroom.jpg"
           alt="Education"
           className="w-full h-full object-cover"
         />

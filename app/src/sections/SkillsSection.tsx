@@ -129,7 +129,7 @@ const SkillsSection = () => {
         className="absolute left-0 top-0 w-[55vw] h-full will-change-transform"
       >
         <img
-          src="/images/skills_keyboard.jpg"
+          src="./images/skills_keyboard.jpg"
           alt="Skills"
           className="w-full h-full object-cover"
         />

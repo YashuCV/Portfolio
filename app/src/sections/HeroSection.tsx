@@ -153,7 +153,7 @@ const HeroSection = () => {
         className="absolute inset-0 w-full h-full will-change-transform"
       >
         <img
-          src="/images/hero_bg.jpg"
+          src="./images/hero_bg.jpg"
           alt="Hero background"
           className="w-full h-full object-cover"
         />

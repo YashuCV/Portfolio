@@ -185,7 +185,7 @@ const AboutSection = () => {
             >
               <div className="aspect-[3/4] overflow-hidden">
                 <img
-                  src="/images/about_portrait.jpg"
+                  src="./images/about_portrait.jpg"
                   alt="Yashwanth"
                   className="w-full h-full object-cover"
                 />
