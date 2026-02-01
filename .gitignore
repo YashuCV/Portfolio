@@ -1,0 +1,19 @@
+# Dependencies
+app/node_modules/
+
+# Build output
+app/dist/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Editor / OS
+.DS_Store
+*.log
+.vscode/
+.idea/
+
+# Optional: uncomment if you use npm in repo root later
+# node_modules/
