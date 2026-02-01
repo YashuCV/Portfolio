@@ -78,7 +78,7 @@ const ProjectsSection = () => {
       fullDescription: 'A full-stack job scraping application that aggregates job listings from Indeed, LinkedIn (via JSearch API), and ZipRecruiter. Features smart H1B sponsorship detection, location and experience filters, real-time data for jobs posted within 24 hours, and deduplication across sources. Built with a modern React frontend and Node.js/Express backend using Cheerio for HTML parsing.',
       tags: ['React', 'Node.js', 'Express', 'Cheerio', 'TypeScript', 'Tailwind CSS'],
       image: './images/project_loom.jpg',
-      github: 'https://github.com/yashwanthveeranna',
+      github: 'https://github.com/YashuCV/Loom_Job_Scrapper',
     },
     {
       title: 'Planora — AI Trip Planner',
@@ -86,7 +86,7 @@ const ProjectsSection = () => {
       fullDescription: 'An AI-powered travel planning assistant that creates complete trips with detailed day-by-day itineraries including activities, dining, and attractions. Features natural language trip planning, smart itinerary generation with specific attractions and restaurants, user authentication with JWT, trip management (create, view, delete), and integration with Groq API (llama-3.3-70b) as a free alternative to OpenAI.',
       tags: ['React 18', 'TypeScript', 'Vite', 'Node.js', 'PostgreSQL', 'Groq API'],
       image: './images/project_planora.jpg',
-      github: 'https://github.com/yashwanthveeranna',
+      github: 'https://github.com/YashuCV/Planora-AI_Powered_Trip_Planning',
     },
     {
       title: 'Etherscan Agent',
@@ -94,7 +94,7 @@ const ProjectsSection = () => {
       fullDescription: 'An intelligent Ethereum blockchain assistant powered by Ollama (local LLM), LangChain tools, and Etherscan API. Ask natural-language questions about Ethereum mainnet, and the agent dynamically calls tools to fetch the correct blockchain data. Supports queries about latest block info, miner addresses, transaction counts, gas used, and Ether balances of any address.',
       tags: ['Python', 'LangChain', 'Streamlit', 'Ollama', 'Etherscan API'],
       image: './images/project_etherscan.jpg',
-      github: 'https://github.com/yashwanthveeranna',
+      github: 'https://github.com/YashuCV/Ollama-Agent',
     },
     {
       title: 'Zeno — Voice Assistant',
@@ -102,7 +102,7 @@ const ProjectsSection = () => {
       fullDescription: 'A personal AI voice assistant that handles natural-language commands for email (Gmail/SMTP), WhatsApp (Twilio), calendar (Google Calendar), checklist management, reminders, and expense tracking. Features voice input via Web Speech API, multi-intent routing (single utterance can trigger multiple actions), and n8n workflow orchestration with LangChain agents.',
       tags: ['React', 'n8n', 'Web Speech API', 'OpenAI', 'Google APIs'],
       image: './images/project_zeno.jpg',
-      github: 'https://github.com/yashwanthveeranna',
+      github: 'https://github.com/YashuCV',
     },
     {
       title: 'AI Resume Screener',
@@ -110,7 +110,7 @@ const ProjectsSection = () => {
       fullDescription: 'Created a custom NLP pipeline using spaCy and Named Entity Recognition (NER) to extract skills, education, and experience from resumes. Integrated a machine learning classifier (TF-IDF + Random Forest) into a Flask REST backend to categorize resumes by job role and industry. Built a React frontend that presents structured JSON results in milliseconds, enabling efficient candidate screening and analysis.',
       tags: ['Python', 'spaCy', 'Flask', 'React', 'NLP', 'Machine Learning'],
       image: './images/project_resume.jpg',
-      github: 'https://github.com/yashwanthveeranna',
+      github: 'https://github.com/YashuCV',
     },
     {
       title: 'Cricket Scorecard App',
@@ -118,7 +118,7 @@ const ProjectsSection = () => {
       fullDescription: 'Built a modular iOS cricket scorecard app using SwiftUI and Core Data for persistent match storage. Implements MVVM architecture with reusable UI components and a centralized data repository for scalable scoring, player management, and result visualization. Features real-time score tracking, player statistics, match history, and intuitive user interface designed for cricket enthusiasts.',
       tags: ['Swift', 'SwiftUI', 'Core Data', 'MVVM', 'iOS'],
       image: './images/project_cricket.jpg',
-      github: 'https://github.com/yashwanthveeranna',
+      github: 'https://github.com/YashuCV/Cricket-score-Card',
     },
   ];
 

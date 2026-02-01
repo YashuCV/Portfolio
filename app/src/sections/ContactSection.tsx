@@ -189,7 +189,7 @@ const ContactSection = () => {
               {/* Social links */}
               <div className="flex items-center gap-4 pt-4">
                 <a
-                  href="https://linkedin.com/in/yashwanthchikkabasavaiah"
+                  href="https://www.linkedin.com/in/yashwanth-veeranna-8b67121a7/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-text-primary/5 hover:bg-accent-lime/10 text-text-secondary hover:text-accent-lime transition-all"
@@ -197,7 +197,7 @@ const ContactSection = () => {
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://github.com/yashwanthveeranna"
+                  href="https://github.com/YashuCV"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 bg-text-primary/5 hover:bg-accent-lime/10 text-text-secondary hover:text-accent-lime transition-all"

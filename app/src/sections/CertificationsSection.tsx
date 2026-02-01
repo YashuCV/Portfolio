@@ -100,12 +100,14 @@ const CertificationsSection = () => {
       platform: 'Tableau',
       year: '2023',
       description: 'Certified in data visualization and dashboard creation using Tableau.',
+      url: 'https://drive.google.com/file/d/15AKl2suT_rrZgfdaqsYFrtFYAmPDOYNZ/view?usp=sharing',
     },
     {
       name: 'Digital Marketing',
       platform: 'Google',
       year: '2022',
       description: 'Comprehensive certification covering SEO, SEM, and digital analytics.',
+      url: 'https://drive.google.com/file/d/1r0bCF-0CzXmyR8DV9HsCxL6aUXe5mHhX/view',
     },
   ];
 
@@ -169,9 +171,15 @@ const CertificationsSection = () => {
                     {cert.description}
                   </p>
                 </div>
-                <button className="p-2 text-text-secondary hover:text-accent-lime transition-colors">
+                <a
+                  href={cert.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2 text-text-secondary hover:text-accent-lime transition-colors"
+                  aria-label={`View ${cert.name} certificate`}
+                >
                   <ExternalLink className="w-4 h-4" />
-                </button>
+                </a>
               </div>
             </div>
           ))}

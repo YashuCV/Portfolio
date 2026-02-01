@@ -164,7 +164,7 @@ const AboutSection = () => {
                 </span>
               </a>
               <a
-                href="https://linkedin.com/in/yashwanthchikkabasavaiah"
+                href="https://www.linkedin.com/in/yashwanth-veeranna-8b67121a7/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors"
