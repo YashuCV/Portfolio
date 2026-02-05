@@ -88,7 +88,7 @@ const ProjectsSection = () => {
       tags: ['Swift', 'SwiftUI', 'Core Data', 'MVVM', 'iOS'],
       image: './images/project_cricket.jpg',
       github: 'https://github.com/YashuCV/Cricket-score-Card',
-      demo: 'https://yashucv.github.io/CricPulse-Cricket-Game-Tracker/',
+      demo: 'https://yashucv.github.io/CricPulse-Cricket_Game_Tracker_Demo/',
     },
     {
       title: 'Planora — AI Trip Planner',
