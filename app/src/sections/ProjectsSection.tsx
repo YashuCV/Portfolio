@@ -73,12 +73,22 @@ const ProjectsSection = () => {
 
   const projects: Project[] = [
     {
-      title: 'Loom — Job Scraper',
-      description: 'Multi-source job aggregator with H1B sponsorship detection.',
-      fullDescription: 'A full-stack job scraping application that aggregates job listings from Indeed, LinkedIn (via JSearch API), and ZipRecruiter. Features smart H1B sponsorship detection, location and experience filters, real-time data for jobs posted within 24 hours, and deduplication across sources. Built with a modern React frontend and Node.js/Express backend using Cheerio for HTML parsing.',
-      tags: ['React', 'Node.js', 'Express', 'Cheerio', 'TypeScript', 'Tailwind CSS'],
-      image: './images/project_loom.jpg',
-      github: 'https://github.com/YashuCV/Loom_Job_Scrapper',
+      title: 'Zeno — Voice Assistant',
+      description: 'Personal AI assistant for email, calendar, and expenses.',
+      fullDescription: 'A personal AI voice assistant that handles natural-language commands for email (Gmail/SMTP), WhatsApp (Twilio), calendar (Google Calendar), checklist management, reminders, and expense tracking. Features voice input via Web Speech API, multi-intent routing (single utterance can trigger multiple actions), and n8n workflow orchestration with LangChain agents.',
+      tags: ['React', 'n8n', 'Web Speech API', 'OpenAI', 'Google APIs'],
+      image: './images/project_zeno.jpg',
+      github: 'https://github.com/YashuCV',
+      demo: 'https://yashucv.github.io/ZENO-AI_Assistant_Demo/',
+    },
+    {
+      title: 'Cricket Scorecard App',
+      description: 'iOS cricket scoring app with SwiftUI and Core Data.',
+      fullDescription: 'Built a modular iOS cricket scorecard app using SwiftUI and Core Data for persistent match storage. Implements MVVM architecture with reusable UI components and a centralized data repository for scalable scoring, player management, and result visualization. Features real-time score tracking, player statistics, match history, and intuitive user interface designed for cricket enthusiasts.',
+      tags: ['Swift', 'SwiftUI', 'Core Data', 'MVVM', 'iOS'],
+      image: './images/project_cricket.jpg',
+      github: 'https://github.com/YashuCV/Cricket-score-Card',
+      demo: 'https://yashucv.github.io/CricPulse-Cricket-Game-Tracker/',
     },
     {
       title: 'Planora — AI Trip Planner',
@@ -87,6 +97,16 @@ const ProjectsSection = () => {
       tags: ['React 18', 'TypeScript', 'Vite', 'Node.js', 'PostgreSQL', 'Groq API'],
       image: './images/project_planora.jpg',
       github: 'https://github.com/YashuCV/Planora-AI_Powered_Trip_Planning',
+      demo: 'https://yashucv.github.io/Planora-AI_Trip_Planner_Demo/',
+    },
+    {
+      title: 'Loom — Job Scraper',
+      description: 'Multi-source job aggregator with H1B sponsorship detection.',
+      fullDescription: 'A full-stack job scraping application that aggregates job listings from Indeed, LinkedIn (via JSearch API), and ZipRecruiter. Features smart H1B sponsorship detection, location and experience filters, real-time data for jobs posted within 24 hours, and deduplication across sources. Built with a modern React frontend and Node.js/Express backend using Cheerio for HTML parsing.',
+      tags: ['React', 'Node.js', 'Express', 'Cheerio', 'TypeScript', 'Tailwind CSS'],
+      image: './images/project_loom.jpg',
+      github: 'https://github.com/YashuCV/Loom_Job_Scrapper',
+      demo: 'https://yashucv.github.io/Loom-Job_Scrapper_Demo/',
     },
     {
       title: 'Etherscan Agent',
@@ -97,28 +117,12 @@ const ProjectsSection = () => {
       github: 'https://github.com/YashuCV/Ollama-Agent',
     },
     {
-      title: 'Zeno — Voice Assistant',
-      description: 'Personal AI assistant for email, calendar, and expenses.',
-      fullDescription: 'A personal AI voice assistant that handles natural-language commands for email (Gmail/SMTP), WhatsApp (Twilio), calendar (Google Calendar), checklist management, reminders, and expense tracking. Features voice input via Web Speech API, multi-intent routing (single utterance can trigger multiple actions), and n8n workflow orchestration with LangChain agents.',
-      tags: ['React', 'n8n', 'Web Speech API', 'OpenAI', 'Google APIs'],
-      image: './images/project_zeno.jpg',
-      github: 'https://github.com/YashuCV',
-    },
-    {
       title: 'AI Resume Screener',
       description: 'NLP pipeline for automated resume parsing and classification.',
       fullDescription: 'Created a custom NLP pipeline using spaCy and Named Entity Recognition (NER) to extract skills, education, and experience from resumes. Integrated a machine learning classifier (TF-IDF + Random Forest) into a Flask REST backend to categorize resumes by job role and industry. Built a React frontend that presents structured JSON results in milliseconds, enabling efficient candidate screening and analysis.',
       tags: ['Python', 'spaCy', 'Flask', 'React', 'NLP', 'Machine Learning'],
       image: './images/project_resume.jpg',
       github: 'https://github.com/YashuCV',
-    },
-    {
-      title: 'Cricket Scorecard App',
-      description: 'iOS cricket scoring app with SwiftUI and Core Data.',
-      fullDescription: 'Built a modular iOS cricket scorecard app using SwiftUI and Core Data for persistent match storage. Implements MVVM architecture with reusable UI components and a centralized data repository for scalable scoring, player management, and result visualization. Features real-time score tracking, player statistics, match history, and intuitive user interface designed for cricket enthusiasts.',
-      tags: ['Swift', 'SwiftUI', 'Core Data', 'MVVM', 'iOS'],
-      image: './images/project_cricket.jpg',
-      github: 'https://github.com/YashuCV/Cricket-score-Card',
     },
   ];
 
@@ -258,7 +262,7 @@ const ProjectsSection = () => {
                     className="flex items-center gap-2 px-4 py-2 border border-accent-lime/60 text-accent-lime hover:bg-accent-lime hover:text-bg-primary transition-colors"
                   >
                     <ExternalLink className="w-4 h-4" />
-                    <span className="font-mono text-sm">Live Demo</span>
+                    <span className="font-mono text-sm">View Demo</span>
                   </a>
                 )}
               </div>
