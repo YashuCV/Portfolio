@@ -23,8 +23,12 @@ const Navigation = () => {
   };
 
   const navLinks = [
-    { label: 'Work', id: 'projects' },
     { label: 'About', id: 'about' },
+    { label: 'Education', id: 'education' },
+    { label: 'Work Experience', id: 'experience' },
+    { label: 'Skills', id: 'skills' },
+    { label: 'Projects', id: 'projects' },
+    { label: 'Certifications', id: 'certifications' },
     { label: 'Contact', id: 'contact' },
   ];
 
@@ -42,9 +46,9 @@ const Navigation = () => {
           {/* Logo */}
           <button
             onClick={() => scrollToSection('hero')}
-            className="font-display font-bold text-text-primary hover:text-accent-lime transition-colors"
+            className="font-display font-bold text-text-primary hover:text-accent-lime transition-colors text-3d"
           >
-            YASHWANTH
+            Yashwanth Veeranna
           </button>
 
           {/* Desktop nav links */}

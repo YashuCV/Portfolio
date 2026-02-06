@@ -103,13 +103,13 @@ const ContactSection = () => {
     // Frontend-only form handling
     const subject = `Message from ${formData.name}`;
     const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
-    window.location.href = `mailto:yashwanthcveeranna@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:yashwanthcv2000@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3000);
   };
 
   const copyEmail = () => {
-    navigator.clipboard.writeText('yashwanthcveeranna@gmail.com');
+    navigator.clipboard.writeText('yashwanthcv2000@gmail.com');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -157,7 +157,7 @@ const ContactSection = () => {
                   <div className="text-left">
                     <span className="block text-text-secondary text-sm">Email</span>
                     <span className="text-text-primary group-hover:text-accent-lime transition-colors">
-                      yashwanthcveeranna@gmail.com
+                      yashwanthcv2000@gmail.com
                     </span>
                   </div>
                   {copied ? (
@@ -171,7 +171,7 @@ const ContactSection = () => {
               {/* Phone */}
               <div className="flex items-center gap-4">
                 <a
-                  href="tel:+14051234567"
+                  href="tel:+19186335960"
                   className="flex items-center gap-3 group"
                 >
                   <div className="p-3 bg-text-primary/5 rounded group-hover:bg-accent-lime/10 transition-colors">
@@ -180,7 +180,7 @@ const ContactSection = () => {
                   <div>
                     <span className="block text-text-secondary text-sm">Phone</span>
                     <span className="text-text-primary group-hover:text-accent-lime transition-colors">
-                      Available on request
+                      +1 9186335960
                     </span>
                   </div>
                 </a>
@@ -260,7 +260,7 @@ const ContactSection = () => {
                     placeholder="Tell me about your project..."
                   />
                 </div>
-                
+
                 <button
                   type="submit"
                   className="w-full flex items-center justify-center gap-2 px-6 py-3 bg-accent-lime text-bg-primary font-mono text-sm uppercase tracking-wider hover:bg-accent-lime/90 transition-colors"
@@ -280,6 +280,11 @@ const ContactSection = () => {
               </form>
             </div>
           </div>
+        </div>
+        <div className="mt-20 md:mt-28 mb-4 flex justify-center">
+          <p className="text-center text-white text-sm md:text-base font-mono">
+            Brewed with ☕ and powered by Java.
+          </p>
         </div>
       </div>
     </section>

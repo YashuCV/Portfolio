@@ -1,7 +1,7 @@
 import { useEffect, useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowDown, ChevronRight } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -10,7 +10,6 @@ const HeroSection = () => {
   const bgRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLDivElement>(null);
   const subheadRef = useRef<HTMLParagraphElement>(null);
-  const ctaRef = useRef<HTMLDivElement>(null);
   const scrollHintRef = useRef<HTMLDivElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
 
@@ -47,7 +46,7 @@ const HeroSection = () => {
 
       // CTA + scroll hint
       tl.fromTo(
-        [ctaRef.current, scrollHintRef.current],
+        [scrollHintRef.current],
         { y: 18, opacity: 0 },
         { y: 0, opacity: 1, duration: 0.5, stagger: 0.08 },
         '-=0.2'
@@ -72,7 +71,7 @@ const HeroSection = () => {
           scrub: 0.6,
           onLeaveBack: () => {
             // Reset all elements to visible when scrolling back to top
-            gsap.set([bgRef.current, headlineRef.current, subheadRef.current, ctaRef.current, scrollHintRef.current], {
+            gsap.set([bgRef.current, headlineRef.current, subheadRef.current, scrollHintRef.current], {
               opacity: 1, x: 0, y: 0
             });
             gsap.set(overlayRef.current, { opacity: 0 });
@@ -115,14 +114,6 @@ const HeroSection = () => {
 
       // CTA exit
       scrollTl.fromTo(
-        ctaRef.current,
-        { y: 0, opacity: 1 },
-        { y: '10vh', opacity: 0, ease: 'power2.in' },
-        0.75
-      );
-
-      // Scroll hint exit
-      scrollTl.fromTo(
         scrollHintRef.current,
         { y: 0, opacity: 1 },
         { y: '10vh', opacity: 0, ease: 'power2.in' },
@@ -133,13 +124,6 @@ const HeroSection = () => {
 
     return () => ctx.revert();
   }, []);
-
-  const scrollToWork = () => {
-    const projectsSection = document.getElementById('projects');
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <section
@@ -153,12 +137,12 @@ const HeroSection = () => {
         className="absolute inset-0 w-full h-full will-change-transform"
       >
         <img
-          src="./images/hero_bg.jpg"
-          alt="Hero background"
+          src="./images/hero_3d.png"
+          alt="Hero background 3D"
           className="w-full h-full object-cover"
         />
         {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/60 via-bg-primary/40 to-bg-primary/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/55 via-bg-primary/35 to-bg-primary/85" />
       </div>
 
       {/* Diagonal wipe overlay */}
@@ -174,44 +158,19 @@ const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 w-full h-full flex flex-col justify-center items-center px-4">
         {/* Headline */}
+        {/* No overlay headline text – the 3D image carries the titles */}
         <div
           ref={headlineRef}
           className="text-center will-change-transform"
-        >
-          <h1 className="font-display font-black text-text-primary leading-none tracking-tight">
-            <span className="headline-word block text-[clamp(44px,8vw,84px)]">
-              CRAFTING
-            </span>
-            <span className="headline-word block text-[clamp(44px,8vw,84px)] mt-2">
-              DIGITAL{' '}
-              <span className="text-accent-lime">EXPERIENCES</span>
-            </span>
-          </h1>
-        </div>
+        />
 
         {/* Subheadline */}
         <p
           ref={subheadRef}
-          className="mt-8 text-text-secondary text-lg md:text-xl max-w-2xl text-center will-change-transform"
+          className="absolute bottom-[6vh] left-1/2 -translate-x-1/2 px-4 text-text-secondary text-base md:text-lg font-mono uppercase tracking-wider text-center will-change-transform"
         >
-          Full-stack developer building modern web & mobile products.
+          Building Scalable Solutions for Modern Challenges
         </p>
-
-        {/* CTA */}
-        <div
-          ref={ctaRef}
-          className="absolute left-[4vw] bottom-[6vh] will-change-transform"
-        >
-          <button
-            onClick={scrollToWork}
-            className="group flex items-center gap-2 text-text-primary hover:text-accent-lime transition-colors"
-          >
-            <span className="font-mono text-sm uppercase tracking-wider">
-              Explore my work
-            </span>
-            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
-        </div>
 
         {/* Scroll hint */}
         <div

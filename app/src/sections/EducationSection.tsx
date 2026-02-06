@@ -1,7 +1,7 @@
 import { useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { GraduationCap, Calendar, Award } from 'lucide-react';
+import { GraduationCap, Calendar, Award, ExternalLink } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -106,16 +106,18 @@ const EducationSection = () => {
     {
       degree: 'MS in Computer Science',
       school: 'Oklahoma State University',
-      duration: '2024 – 2025',
+      duration: 'Jan 2024 – Dec 2025',
       detail: 'GPA: 3.7',
       icon: Award,
+      url: 'https://go.okstate.edu/',
     },
     {
       degree: 'BTech in Electrical & Electronics Engineering',
       school: 'National Institute of Technology, Karnataka',
-      duration: '2018 – 2022',
-      detail: '',
+      duration: 'Jul 2018 – May 2022',
+      detail: 'GPA: 7.6',
       icon: GraduationCap,
+      url: 'https://www.nitk.ac.in/',
     },
   ];
 
@@ -125,17 +127,33 @@ const EducationSection = () => {
       id="education"
       className="section-pinned z-30 bg-bg-secondary"
     >
-      {/* Left image */}
+      {/* Left images: OSU (top) and NITK (bottom) */}
       <div
         ref={imageRef}
-        className="absolute left-0 top-0 w-[55vw] h-full will-change-transform"
+        className="absolute left-0 top-0 w-[55vw] h-full will-change-transform flex flex-col"
       >
-        <img
-          src="./images/edu_classroom.jpg"
-          alt="Education"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-bg-secondary/80" />
+        {/* OSU */}
+        <div className="relative h-1/2 overflow-hidden">
+          <img
+            src="./images/edu_osu.png"
+            alt="Oklahoma State University campus"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-bg-primary/60 via-transparent to-bg-primary/70" />
+        </div>
+
+        {/* NITK */}
+        <div className="relative h-1/2 overflow-hidden border-t border-bg-primary/40">
+          <img
+            src="./images/edu_nitk.png"
+            alt="National Institute of Technology Karnataka campus"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/70 via-transparent to-bg-primary/60" />
+        </div>
+
+        {/* Side fade to blend into panel */}
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-bg-primary/70 via-transparent to-bg-secondary/90" />
       </div>
 
       {/* Right panel */}
@@ -170,7 +188,15 @@ const EducationSection = () => {
                     {edu.degree}
                   </h3>
                   <p className="text-text-secondary text-base mb-2">
-                    {edu.school}
+                    <a
+                      href={edu.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 hover:text-accent-lime transition-colors underline-offset-4 hover:underline"
+                    >
+                      {edu.school}
+                      <ExternalLink className="w-3 h-3 text-text-secondary/70" />
+                    </a>
                   </p>
                   <div className="flex items-center gap-4">
                     <span className="flex items-center gap-1.5 text-text-secondary/70 font-mono text-sm">

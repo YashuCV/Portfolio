@@ -139,7 +139,7 @@ const ProjectsSection = () => {
             PRO<span className="text-accent-lime">JECTS</span>
           </h2>
           <p className="text-text-secondary text-lg max-w-xl">
-            A few things I've built—scrapers, agents, assistants, and apps.
+            Few things I've built from automation scrapers to full stack products to intelligent agents.
           </p>
         </div>
 

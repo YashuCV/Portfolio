@@ -50,11 +50,11 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Left */}
           <div className="flex items-center gap-2">
-            <span className="font-display font-bold text-text-primary">
-              YASHWANTH
+            <span className="font-display font-bold text-base text-white">
+              Yashwanth Veeranna
             </span>
-            <span className="text-text-secondary/40">|</span>
-            <span className="font-mono text-sm text-text-secondary/60">
+            <span className="text-white/70">|</span>
+            <span className="font-mono text-sm text-white/80">
               © 2026
             </span>
           </div>
@@ -63,34 +63,32 @@ const Footer = () => {
           <div className="flex items-center gap-6">
             <a
               href="#hero"
-              className="text-text-secondary/60 hover:text-accent-lime text-sm transition-colors"
+              className="text-white/80 hover:text-accent-lime text-sm md:text-base transition-colors"
             >
               Home
             </a>
             <a
               href="#about"
-              className="text-text-secondary/60 hover:text-accent-lime text-sm transition-colors"
+              className="text-white/80 hover:text-accent-lime text-sm md:text-base transition-colors"
             >
               About
             </a>
             <a
               href="#projects"
-              className="text-text-secondary/60 hover:text-accent-lime text-sm transition-colors"
+              className="text-white/80 hover:text-accent-lime text-sm md:text-base transition-colors"
             >
               Projects
             </a>
             <a
               href="#contact"
-              className="text-text-secondary/60 hover:text-accent-lime text-sm transition-colors"
+              className="text-white/80 hover:text-accent-lime text-sm md:text-base transition-colors"
             >
               Contact
             </a>
           </div>
 
           {/* Right */}
-          <div className="flex items-center gap-2 text-text-secondary/60 text-sm">
-            <span>Made with</span>
-            <Heart className="w-4 h-4 text-accent-lime fill-accent-lime" />
+          <div className="flex items-center gap-2 text-white text-sm md:text-base">
             <span>Thanks for visiting.</span>
           </div>
         </div>

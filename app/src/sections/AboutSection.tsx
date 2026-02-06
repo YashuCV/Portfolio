@@ -142,13 +142,13 @@ const AboutSection = () => {
             {/* Body copy */}
             <div ref={bodyRef} className="space-y-6 max-w-xl">
               <p className="body-line text-text-secondary text-base md:text-lg leading-relaxed">
-                I'm a full-stack developer with a focus on scalable backends and clean, accessible frontends. I specialize in building production-grade applications that handle high-throughput data while maintaining exceptional user experiences.
+                I'm passionate about creating software that solves real problems and delivers measurable impact, whether that's helping industrial operators make faster decisions or enabling state agencies to modernize legacy processes.
               </p>
               <p className="body-line text-text-secondary text-base md:text-lg leading-relaxed">
-                I've shipped production systems handling real-time data streams, built iOS apps from scratch using Swift and MVVM architecture, and led teams through complete product development cycles—from requirements gathering to App Store deployment.
+                I'm a Full Stack Software Engineer with 4+ years of experience turning complex challenges into solutions that people actually want to use. My experience spans distributed systems, microservices, AI integrations, and mobile development, but what truly drives me is building technology that makes a difference.
               </p>
               <p className="body-line text-text-secondary text-base md:text-lg leading-relaxed">
-                My experience spans across distributed systems, microservices, AI integrations, and mobile development. I'm passionate about creating technology that solves real problems and delivers measurable impact.
+                I believe the best technology doesn't just work well, it transforms how people work, making their jobs easier and their outcomes better.
               </p>
             </div>
 

@@ -180,12 +180,12 @@ const SkillsSection = () => {
         <div className="mt-10 pt-6 border-t border-text-primary/10">
           <div className="flex items-center gap-6">
             <div className="text-center">
-              <span className="block font-display font-bold text-2xl text-accent-lime">3+</span>
+              <span className="block font-display font-bold text-2xl text-accent-lime">4+</span>
               <span className="text-text-secondary/60 font-mono text-xs uppercase">Years Exp</span>
             </div>
             <div className="w-px h-10 bg-text-primary/10" />
             <div className="text-center">
-              <span className="block font-display font-bold text-2xl text-accent-lime">10+</span>
+              <span className="block font-display font-bold text-2xl text-accent-lime">15+</span>
               <span className="text-text-secondary/60 font-mono text-xs uppercase">Projects</span>
             </div>
             <div className="w-px h-10 bg-text-primary/10" />
