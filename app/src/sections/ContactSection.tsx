@@ -186,6 +186,23 @@ const ContactSection = () => {
                 </a>
               </div>
 
+              {/* Address */}
+              <div className="flex items-center gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="p-3 bg-text-primary/5 rounded">
+                    <span className="w-5 h-5 text-text-secondary font-mono text-xs flex items-center justify-center">
+                      HQ
+                    </span>
+                  </div>
+                  <div>
+                    <span className="block text-text-secondary text-sm">Address</span>
+                    <span className="text-text-primary">
+                      Sunol St, San Jose, California
+                    </span>
+                  </div>
+                </div>
+              </div>
+
               {/* Social links */}
               <div className="flex items-center gap-4 pt-4">
                 <a
