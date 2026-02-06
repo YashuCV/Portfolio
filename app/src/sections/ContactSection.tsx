@@ -190,9 +190,7 @@ const ContactSection = () => {
               <div className="flex items-center gap-4">
                 <div className="flex items-center gap-3">
                   <div className="p-3 bg-text-primary/5 rounded">
-                    <span className="w-5 h-5 text-text-secondary font-mono text-xs flex items-center justify-center">
-                      HQ
-                    </span>
+                    <span className="text-lg">📍</span>
                   </div>
                   <div>
                     <span className="block text-text-secondary text-sm">Address</span>
