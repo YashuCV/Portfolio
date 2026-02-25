@@ -213,16 +213,6 @@ const ExperienceSection = () => {
                     }`}
                   >
                     <div className="pt-4 border-t border-text-primary/10">
-                      <div className="flex flex-wrap gap-2">
-                        {exp.tech.map((tech, tIndex) => (
-                          <span
-                            key={tIndex}
-                            className="skill-tag"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
                     </div>
                   </div>
                 </div>
