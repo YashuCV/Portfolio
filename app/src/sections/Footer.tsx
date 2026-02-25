@@ -61,7 +61,7 @@ const Footer = () => {
           {/* Center - quick links */}
           <div className="flex items-center gap-6">
             <a
-              href="#hero"
+              href="#about"
               className="text-white/80 hover:text-accent-lime text-sm md:text-base transition-colors"
             >
               Home

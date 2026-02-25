@@ -111,6 +111,11 @@ const SkillsSection = () => {
       skills: ['Spring Boot', 'Node.js', 'Flask', 'Kafka', 'PostgreSQL', 'MySQL', 'MongoDB', 'Redis'],
     },
     {
+      category: 'AI & ML',
+      icon: Server,
+      skills: ['PyTorch', 'TensorFlow', 'MCP', 'Guardrails AI', 'Pinecone', 'RAG', 'Prompt Engineering'],
+    },
+    {
       category: 'Cloud & DevOps',
       icon: Cloud,
       skills: ['AWS', 'Docker', 'Kubernetes', 'Jenkins', 'GitHub Actions', 'CI/CD', 'Firebase'],

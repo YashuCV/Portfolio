@@ -213,16 +213,6 @@ const ExperienceSection = () => {
                     }`}
                   >
                     <div className="pt-4 border-t border-text-primary/10">
-                      <ul className="space-y-2 mb-4">
-                        {exp.highlights.map((highlight, hIndex) => (
-                          <li
-                            key={hIndex}
-                            className="text-text-secondary/80 text-sm leading-relaxed pl-4 relative before:content-['•'] before:absolute before:left-0 before:text-accent-lime"
-                          >
-                            {highlight}
-                          </li>
-                        ))}
-                      </ul>
                       <div className="flex flex-wrap gap-2">
                         {exp.tech.map((tech, tIndex) => (
                           <span

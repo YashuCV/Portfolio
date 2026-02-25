@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from './components/Navigation';
-import HeroSection from './sections/HeroSection';
 import AboutSection from './sections/AboutSection';
 import EducationSection from './sections/EducationSection';
 import ExperienceSection from './sections/ExperienceSection';
@@ -74,7 +73,6 @@ function App() {
       
       {/* Sections */}
       <main className="relative">
-        <HeroSection />
         <AboutSection />
         <EducationSection />
         <ExperienceSection />

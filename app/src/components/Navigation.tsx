@@ -45,7 +45,7 @@ const Navigation = () => {
         <div className="px-[4vw] flex items-center justify-between">
           {/* Logo */}
           <button
-            onClick={() => scrollToSection('hero')}
+            onClick={() => scrollToSection('about')}
             className="font-display font-bold text-text-primary hover:text-accent-lime transition-colors text-3d"
           >
             Yashwanth Veeranna

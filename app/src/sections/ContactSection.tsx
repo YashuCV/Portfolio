@@ -195,7 +195,7 @@ const ContactSection = () => {
                   <div>
                     <span className="block text-text-secondary text-sm">Address</span>
                     <span className="text-text-primary">
-                      Sunol St, San Jose, California
+                      United States
                     </span>
                   </div>
                 </div>
