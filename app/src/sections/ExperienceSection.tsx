@@ -102,22 +102,22 @@ const ExperienceSection = () => {
       location: 'Stillwater, OK',
       duration: 'Jan 2026 – Present',
       highlights: [
-        'Leading development of a cross-platform energy assessment ecosystem for the Oklahoma Department of Commerce (ODOC) using Spring Boot microservices, React, Swift, and Kotlin to digitize energy audits.',
-        'Leading a RAG-based AI chatbot for the ITAC website using Pinecone and OpenAI, automating tier-1 support by grounding responses in institutional documentation.',
+        'Architected a cross-platform energy assessment ecosystem using Spring Boot microservices and React, digitizing 100% of manual energy audits and improving reporting efficiency for the Oklahoma Department of Commerce (ODOC).',
+        'Leading RAG-based AI chatbot for ITAC website using Pinecone, OpenAI, LangChain, and FastAPI, automating tier-1 support by grounding responses in institutional documentation with response validation through Guardrails AI.',
       ],
-      tech: ['Spring Boot', 'React', 'Swift', 'Kotlin', 'Pinecone', 'OpenAI'],
+      tech: ['Spring Boot', 'React', 'Pinecone', 'OpenAI', 'LangChain', 'FastAPI', 'Guardrails AI'],
     },
     {
-      role: 'Full Stack Developer | Graduate Assistant',
+      role: 'Full-Stack Developer | Graduate Assistant',
       company: 'Oklahoma State University',
       location: 'Stillwater, OK',
       duration: 'Jan 2024 – Dec 2025',
       highlights: [
-        'Engineered cross-platform push notification infrastructure with FCM and APNs plus Spring Events, automating device token lifecycle and achieving ~98% delivery success.',
-        'Orchestrated weather and geospatial data pipelines with Java and Spring WebClient, connection pooling, and multi-level caching to cut external API calls by ~40%.',
-        'Resolved production bugs, concurrency issues, memory leaks, and network instability, reducing crash rates by ~40% across apps.',
-        'Secured service APIs with Spring Security OAuth2 Resource Server and JWT, enforcing role-based access control and OWASP-aligned best practices.',
-        'Led the complete SDLC from requirements analysis, distributed system design, Figma UI/UX collaboration, development to GitHub Actions for iOS applications Burn, GreenBug, Sorghum, Plant-it OK and BCC.',
+        'Engineered cross-platform push notification infrastructure utilizing FCM and APNs with automated device token lifecycle management and event-driven triggers via Spring Events, achieving 98% delivery success rate.',
+        'Orchestrated weather and geospatial data pipelines using Java and Spring WebClient, implementing connection pooling and multi-level caching to reduce external API dependency by 40%.',
+        'Resolved production bugs, concurrency issues, memory leaks, and network instability reducing crash rates by 40%.',
+        'Secured service APIs using Spring Security OAuth2 Resource Server and JWT, enforcing role-based access control and data integrity in alignment with OWASP recommendations.',
+        'Managed the complete SDLC from requirements analysis, distributed system design, Figma UI/UX collaboration, development to GitHub Actions for these iOS applications Burn, GreenBug, Sorghum, Plant-it OK and BCC.',
       ],
       tech: ['Swift', 'Spring Boot', 'OAuth2', 'JWT', 'FCM', 'APNs'],
     },
@@ -127,24 +127,24 @@ const ExperienceSection = () => {
       location: 'Hassan, India',
       duration: 'Jul 2022 – Dec 2023',
       highlights: [
-        'Designed and delivered a Real Time Alarm (RTA) service with 27 REST APIs using Spring Boot, PostgreSQL, GraphQL, AngularJS, and RxJS, enabling operators to triage and acknowledge alerts 60% faster.',
-        'Built a low-latency, event-driven WebSocket streaming layer using STOMP and SimpMessagingTemplate, publishing delta-encoded telemetry updates to the UI.',
-        'Pioneered a complete RTA test suite (Mockito + JUnit + RestTemplate), achieving 95%+ code coverage and cutting release time by ~50%.',
-        'Implemented circuit breakers in the data layer with Hystrix and Resilience4j to handle transient DB failures and enable automatic failover.',
-        'Mentored two interns on backend design, testing, and production readiness.',
+        'Designed & Delivered (Real Time Alarm) RTA service with 27 Rest APIs using Spring Boot, PostgreSQL, GraphQL, AngularJs and RxJS to enable operators to filter, triage, and acknowledge alerts with 60% faster response times.',
+        'Designed a high-performance streaming layer using STOMP and SimpMessagingTemplate, achieving sub-100ms latency for telemetry updates and increasing UI responsiveness for critical data monitoring.',
+        'Pioneered complete test suite in RTA module, consisting of Mockito JUnit test cases and RestTemplate integration test cases, achieving over 95% code coverage and reducing software release time by 50%.',
+        'Developed circuit breaker functionality in the database layer using Hystrix and Resilience4j to handle temporary failures, enabling automatic failover to backup databases for improved service reliability.',
+        'Mentored 2 interns providing guidance & support to enhance their skills in software development and project management.',
       ],
-      tech: ['Spring Boot', 'PostgreSQL', 'GraphQL', 'AngularJS', 'RxJS', 'WebSocket', 'JUnit', 'Resilience4j'],
+      tech: ['Spring Boot', 'PostgreSQL', 'GraphQL', 'AngularJS', 'RxJS', 'STOMP', 'JUnit', 'Resilience4j'],
     },
     {
       role: 'Software Developer Intern',
       company: 'One Direct Technologies',
       location: 'Bengaluru, India',
-      duration: 'Jan 2022 – Jun 2022',
+      duration: 'Jan 2022 – June 2022',
       highlights: [
-        'Built proof-of-concept conversational workflows by integrating Google Dialogflow to enable intent-based support journeys and operational metrics (bot handling time, agent response time, assignment latency).',
-        'Enhanced a messaging microservice using Java, Spring Boot, RabbitMQ, Redis, and MongoDB, exposing secure, high-performance REST APIs for scalable conversational processing.',
+        'Developed a Proof of Concept (POC) integrating Google DialogFlow to automate conversational workflows, enabling real-time tracking of agent response times and reducing manual monitoring overhead by 55%.',
+        'Scaled a messaging microservice using Java, Spring Boot, and RabbitMQ, enabling high-throughput conversational processing and improving API response times.',
       ],
-      tech: ['Java', 'Spring Boot', 'RabbitMQ', 'Redis', 'MongoDB', 'Dialogflow'],
+      tech: ['Java', 'Spring Boot', 'RabbitMQ', 'DialogFlow'],
     },
   ];
 
@@ -209,10 +209,18 @@ const ExperienceSection = () => {
                   {/* Expandable content */}
                   <div
                     className={`overflow-hidden transition-all duration-300 ${
-                      expandedIndex === index ? 'max-h-96 mt-4' : 'max-h-0'
+                      expandedIndex === index ? 'max-h-[28rem] mt-4' : 'max-h-0'
                     }`}
                   >
                     <div className="pt-4 border-t border-text-primary/10">
+                      <ul className="space-y-2 text-sm text-text-secondary">
+                        {exp.highlights.map((item, i) => (
+                          <li key={i} className="flex gap-2">
+                            <span className="text-accent-lime mt-0.5 shrink-0">•</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>
