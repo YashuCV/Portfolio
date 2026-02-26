@@ -1,5 +1,9 @@
-import { useState } from 'react';
+import { useRef, useLayoutEffect, useState } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ExternalLink, Github, X, ChevronRight } from 'lucide-react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface Project {
   title: string;
@@ -12,7 +16,60 @@ interface Project {
 }
 
 const ProjectsSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const headlineRef = useRef<HTMLDivElement>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  useLayoutEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const ctx = gsap.context(() => {
+      // Headline animation
+      gsap.fromTo(
+        headlineRef.current,
+        { y: 18, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 80%',
+            end: 'top 50%',
+            scrub: 0.4,
+          },
+        }
+      );
+
+      // Cards animation
+      const cards = gridRef.current?.querySelectorAll('.project-card');
+      if (cards) {
+        gsap.fromTo(
+          cards,
+          { y: 60, opacity: 0, scale: 0.98 },
+          {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: section,
+              start: 'top 70%',
+              end: 'top 20%',
+              scrub: 0.4,
+            },
+          }
+        );
+      }
+    }, section);
+
+    return () => ctx.revert();
+  }, []);
 
   const projects: Project[] = [
     {
@@ -71,11 +128,13 @@ const ProjectsSection = () => {
 
   return (
     <section
+      ref={sectionRef}
       id="projects"
       className="section-flowing z-[60] bg-bg-primary min-h-screen"
     >
       <div className="w-full px-[6vw] py-[8vh]">
-        <div className="mb-12">
+        {/* Headline */}
+        <div ref={headlineRef} className="mb-12 will-change-transform">
           <h2 className="font-display font-black text-[clamp(34px,5vw,56px)] text-text-primary mb-4">
             PRO<span className="text-accent-lime">JECTS</span>
           </h2>
@@ -84,11 +143,15 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        {/* Projects grid */}
+        <div
+          ref={gridRef}
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8"
+        >
           {projects.map((project, index) => (
             <div
               key={index}
-              className="project-card group glass-card overflow-hidden cursor-pointer hover:-translate-y-2 transition-all duration-300"
+              className="project-card group glass-card overflow-hidden cursor-pointer hover:-translate-y-2 transition-all duration-300 will-change-transform"
               onClick={() => setSelectedProject(project)}
             >
               {/* Image */}

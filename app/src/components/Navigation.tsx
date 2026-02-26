@@ -16,12 +16,10 @@ const Navigation = () => {
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
-    if (!section) {
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
       setIsMobileMenuOpen(false);
-      return;
     }
-    section.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    setIsMobileMenuOpen(false);
   };
 
   const navLinks = [
@@ -47,7 +45,7 @@ const Navigation = () => {
         <div className="px-[4vw] flex items-center justify-between">
           {/* Logo */}
           <button
-            onClick={() => scrollToSection('about')}
+            onClick={() => scrollToSection('hero')}
             className="font-display font-bold text-text-primary hover:text-accent-lime transition-colors text-3d"
           >
             Yashwanth Veeranna

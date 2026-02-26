@@ -1,10 +1,102 @@
-import { useState } from 'react';
+import { useRef, useLayoutEffect, useState } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Mail, Linkedin, Github, Send, Phone, Copy, Check } from 'lucide-react';
 
+gsap.registerPlugin(ScrollTrigger);
+
 const ContactSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const headlineRef = useRef<HTMLHeadingElement>(null);
+  const bodyRef = useRef<HTMLDivElement>(null);
+  const formRef = useRef<HTMLDivElement>(null);
+  const contactRowRef = useRef<HTMLDivElement>(null);
+  
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
   const [copied, setCopied] = useState(false);
+
+  useLayoutEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const ctx = gsap.context(() => {
+      // Headline animation
+      gsap.fromTo(
+        headlineRef.current,
+        { x: '-6vw', opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 80%',
+            end: 'top 40%',
+            scrub: 0.4,
+          },
+        }
+      );
+
+      // Body animation
+      gsap.fromTo(
+        bodyRef.current,
+        { y: 18, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 70%',
+            end: 'top 30%',
+            scrub: 0.4,
+          },
+        }
+      );
+
+      // Form animation
+      gsap.fromTo(
+        formRef.current,
+        { x: '10vw', opacity: 0, rotate: 1 },
+        {
+          x: 0,
+          opacity: 1,
+          rotate: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 70%',
+            end: 'top 30%',
+            scrub: 0.4,
+          },
+        }
+      );
+
+      // Contact row animation
+      gsap.fromTo(
+        contactRowRef.current,
+        { y: 14, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: section,
+            start: 'top 60%',
+            end: 'top 20%',
+            scrub: 0.4,
+          },
+        }
+      );
+    }, section);
+
+    return () => ctx.revert();
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,18 +116,25 @@ const ContactSection = () => {
 
   return (
     <section
+      ref={sectionRef}
       id="contact"
       className="section-flowing z-[80] bg-bg-primary min-h-screen flex items-center"
     >
       <div className="w-full px-[6vw] py-[10vh]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+          {/* Left content */}
           <div>
-            <h2 className="font-display font-black text-[clamp(32px,4.5vw,56px)] text-text-primary leading-tight mb-8">
+            {/* Headline */}
+            <h2
+              ref={headlineRef}
+              className="font-display font-black text-[clamp(32px,4.5vw,56px)] text-text-primary leading-tight mb-8 will-change-transform"
+            >
               LET'S BUILD<br />
               SOMETHING <span className="text-accent-lime">TOGETHER.</span>
             </h2>
 
-            <div className="space-y-4 mb-10 max-w-md">
+            {/* Body */}
+            <div ref={bodyRef} className="space-y-4 mb-10 max-w-md will-change-transform">
               <p className="text-text-secondary text-lg">
                 I'm open to full-stack, mobile, and AI-forward roles.
               </p>
@@ -44,7 +143,8 @@ const ContactSection = () => {
               </p>
             </div>
 
-            <div className="space-y-6">
+            {/* Contact row */}
+            <div ref={contactRowRef} className="space-y-6 will-change-transform">
               {/* Email */}
               <div className="flex items-center gap-4">
                 <button
@@ -95,7 +195,7 @@ const ContactSection = () => {
                   <div>
                     <span className="block text-text-secondary text-sm">Address</span>
                     <span className="text-text-primary">
-                      United States
+                      Sunol St, San Jose, California
                     </span>
                   </div>
                 </div>
@@ -124,7 +224,10 @@ const ContactSection = () => {
           </div>
 
           {/* Right form */}
-          <div className="flex items-center justify-center lg:justify-end">
+          <div
+            ref={formRef}
+            className="flex items-center justify-center lg:justify-end will-change-transform"
+          >
             <div className="glass-card w-full max-w-md p-8">
               <h3 className="font-display font-bold text-xl text-text-primary mb-6">
                 Send a Message

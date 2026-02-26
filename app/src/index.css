@@ -36,7 +36,6 @@
   
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 5rem; /* keep section headings visible below fixed nav */
   }
   
   body {
@@ -106,11 +105,6 @@
   
   .section-flowing {
     @apply relative w-full py-20;
-    scroll-margin-top: 5rem;
-  }
-
-  .section-pinned {
-    scroll-margin-top: 5rem;
   }
 }
 
