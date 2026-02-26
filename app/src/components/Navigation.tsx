@@ -1,13 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-const SMOOTH_SCROLL_DURATION_MS = 1000;
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const refreshTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,19 +20,8 @@ const Navigation = () => {
       setIsMobileMenuOpen(false);
       return;
     }
-
-    if (refreshTimeoutRef.current) {
-      clearTimeout(refreshTimeoutRef.current);
-      refreshTimeoutRef.current = null;
-    }
-
-    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    section.scrollIntoView({ behavior: 'smooth', block: 'center' });
     setIsMobileMenuOpen(false);
-
-    refreshTimeoutRef.current = setTimeout(() => {
-      refreshTimeoutRef.current = null;
-      ScrollTrigger.refresh();
-    }, SMOOTH_SCROLL_DURATION_MS);
   };
 
   const navLinks = [

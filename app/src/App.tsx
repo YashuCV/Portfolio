@@ -1,6 +1,3 @@
-import { useRef } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Navigation from './components/Navigation';
 import AboutSection from './sections/AboutSection';
 import EducationSection from './sections/EducationSection';
@@ -11,13 +8,9 @@ import CertificationsSection from './sections/CertificationsSection';
 import ContactSection from './sections/ContactSection';
 import Footer from './sections/Footer';
 
-gsap.registerPlugin(ScrollTrigger);
-
 function App() {
-  const mainRef = useRef<HTMLDivElement>(null);
-
   return (
-    <div ref={mainRef} className="relative bg-bg-primary">
+    <div className="relative bg-bg-primary">
       {/* Grain overlay */}
       <div className="grain-overlay" />
       
