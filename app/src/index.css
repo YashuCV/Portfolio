@@ -35,7 +35,8 @@
   }
   
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: auto; /* use JS-driven smooth scroll so it plays nice with GSAP ScrollTrigger */
+    scroll-padding-top: 5rem; /* prevent fixed nav from covering section tops */
   }
   
   body {

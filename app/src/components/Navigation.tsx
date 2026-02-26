@@ -1,9 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+const DURATION = 1;
+const EASE = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2); // easeInOutCubic
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const scrollRafRef = useRef<number | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,10 +24,48 @@ const Navigation = () => {
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+    if (!section) {
       setIsMobileMenuOpen(false);
+      return;
     }
+
+    if (scrollRafRef.current != null) {
+      cancelAnimationFrame(scrollRafRef.current);
+      scrollRafRef.current = null;
+      ScrollTrigger.getAll().forEach((st) => st.enable());
+      ScrollTrigger.refresh();
+    }
+
+    const startY = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const targetY = Math.min(
+      Math.max(0, section.getBoundingClientRect().top + startY - 80),
+      docHeight
+    );
+    const distance = Math.abs(targetY - startY);
+    const duration = Math.min(DURATION, 0.4 + (distance / 1200) * 0.6);
+
+    const startTime = performance.now();
+
+    ScrollTrigger.getAll().forEach((st) => st.disable());
+    const tick = (now: number) => {
+      const elapsed = (now - startTime) / 1000;
+      const t = Math.min(elapsed / duration, 1);
+      const eased = EASE(t);
+      const currentY = startY + (targetY - startY) * eased;
+      window.scrollTo(0, currentY);
+
+      if (t < 1) {
+        scrollRafRef.current = requestAnimationFrame(tick);
+      } else {
+        scrollRafRef.current = null;
+        ScrollTrigger.getAll().forEach((st) => st.enable());
+        ScrollTrigger.refresh();
+      }
+    };
+
+    scrollRafRef.current = requestAnimationFrame(tick);
+    setIsMobileMenuOpen(false);
   };
 
   const navLinks = [
