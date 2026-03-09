@@ -1,7 +1,7 @@
 import { useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { GraduationCap, Calendar, Award, ExternalLink } from 'lucide-react';
+import { GraduationCap, ExternalLink } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -169,17 +169,13 @@ const EducationSection = () => {
                         <ExternalLink className="w-3 h-3 text-text-secondary/70" />
                       </a>
                     </p>
-                    <div className="flex items-center gap-4">
-                      <span className="flex items-center gap-1.5 text-text-secondary/70 font-mono text-sm">
-                        <Calendar className="w-3.5 h-3.5" />
-                        {edu.duration}
-                      </span>
-                      {edu.detail && (
+                    {edu.detail && (
+                      <div className="mt-1">
                         <span className="text-accent-lime font-mono text-sm">
                           {edu.detail}
                         </span>
-                      )}
-                    </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>

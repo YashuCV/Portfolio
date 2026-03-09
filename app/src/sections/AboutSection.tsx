@@ -133,7 +133,7 @@ const AboutSection = () => {
             {/* CTA row */}
             <div ref={ctaRef} className="mt-10 flex items-center gap-6 will-change-transform">
               <a
-                href="mailto:yashwanthcveeranna@gmail.com?subject=Resume Request"
+                href="mailto:yashwanthveeranna26@gmail.com.com?subject=Resume Request"
                 className="group flex items-center gap-2 px-5 py-2.5 border border-accent-lime/60 text-accent-lime hover:bg-accent-lime hover:text-bg-primary transition-all duration-300"
               >
                 <FileText className="w-4 h-4" />

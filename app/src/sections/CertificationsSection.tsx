@@ -88,6 +88,13 @@ const CertificationsSection = () => {
       description: 'Comprehensive certification covering SEO, SEM, and digital analytics.',
       url: 'https://drive.google.com/file/d/1r0bCF-0CzXmyR8DV9HsCxL6aUXe5mHhX/view',
     },
+    {
+      name: 'Microsoft Certified: Azure Fundamentals',
+      platform: 'Microsoft',
+      year: '2022',
+      description: 'Foundational knowledge of cloud concepts, core Azure services, and security/governance features.',
+      url: 'https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals/',
+    }
   ];
 
   return (

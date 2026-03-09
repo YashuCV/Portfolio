@@ -308,7 +308,7 @@ This project is open source and available for personal use.
 
 ## 🤝 Connect
 
-- **Email**: yashwanthcveeranna@gmail.com
+- **Email**: yashwanthveeranna26@gmail.com.com
 - **LinkedIn**: https://linkedin.com/in/yashwanthchikkabasavaiah
 - **GitHub**: https://github.com/yashwanthveeranna
 

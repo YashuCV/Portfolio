@@ -80,13 +80,12 @@ const ExperienceSection = () => {
     {
       role: 'Software Developer',
       company: 'OK STATE - Industrial Training & Assessment Center',
-      location: 'Stillwater, OK',
+      location: 'Remote',
       duration: 'Jan 2026 – Present',
       highlights: [
-        'Leading development of a cross-platform energy assessment ecosystem for the Oklahoma Department of Commerce (ODOC) using Spring Boot microservices, React, Swift, and Kotlin to digitize energy audits.',
-        'Leading a RAG-based AI chatbot for the ITAC website using Pinecone and OpenAI, automating tier-1 support by grounding responses in institutional documentation.',
-      ],
-      tech: ['Spring Boot', 'React', 'Swift', 'Kotlin', 'Pinecone', 'OpenAI'],
+        'Architected a full-stack energy assessment platform for the Oklahoma Department of Commerce, digitizing 100% of manual audits and improving reporting efficiency.',
+        'Developed a RAG-based AI chatbot using Pinecone, LangChain, and OpenAI to automate tier-1 support queries, grounding responses in institutional documentation with an output validation layer to block hallucinated or off-topic responses before reaching users.',
+      ]
     },
     {
       role: 'Full Stack Developer | Graduate Assistant',
@@ -94,38 +93,46 @@ const ExperienceSection = () => {
       location: 'Stillwater, OK',
       duration: 'Jan 2024 – Dec 2025',
       highlights: [
-        'Engineered cross-platform push notification infrastructure with FCM and APNs plus Spring Events, automating device token lifecycle and achieving ~98% delivery success.',
-        'Orchestrated weather and geospatial data pipelines with Java and Spring WebClient, connection pooling, and multi-level caching to cut external API calls by ~40%.',
-        'Resolved production bugs, concurrency issues, memory leaks, and network instability, reducing crash rates by ~40% across apps.',
-        'Secured service APIs with Spring Security OAuth2 Resource Server and JWT, enforcing role-based access control and OWASP-aligned best practices.',
-        'Led the complete SDLC from requirements analysis, distributed system design, Figma UI/UX collaboration, development to GitHub Actions for iOS applications Burn, GreenBug, Sorghum, Plant-it OK and BCC.',
-      ],
-      tech: ['Swift', 'Spring Boot', 'OAuth2', 'JWT', 'FCM', 'APNs'],
+        'Solely owned the full SDLC for 5 production applications, independently managing everything from requirements and system design through to production deployment.',
+        'Built and maintained GitHub Actions CI/CD pipelines, automating build, test, and deploy workflows end-to-end.',
+        'Secured all service APIs using OAuth 2.0 JWT with role-based access control per OWASP standards, and implemented push notifications via FCM and APNs achieving a 98% delivery success rate.',
+        'Integrated a GPT-4 and LangChain fallback layer for dynamic data generation achieving 100% search coverage, and resolved critical async and database connection lifecycle issues reducing application crash rate by 70%.',
+      ]
     },
     {
-      role: 'Software Engineer',
-      company: 'Petronet MHB Ltd',
-      location: 'Hassan, India',
+      role: 'Senior Software Developer',
+      company: 'Wells Fargo',
+      location: 'Remote',
       duration: 'Jul 2022 – Dec 2023',
       highlights: [
-        'Designed and delivered a Real Time Alarm (RTA) service with 27 REST APIs using Spring Boot, PostgreSQL, GraphQL, AngularJS, and RxJS, enabling operators to triage and acknowledge alerts 60% faster.',
-        'Built a low-latency, event-driven WebSocket streaming layer using STOMP and SimpMessagingTemplate, publishing delta-encoded telemetry updates to the UI.',
-        'Pioneered a complete RTA test suite (Mockito + JUnit + RestTemplate), achieving 95%+ code coverage and cutting release time by ~50%.',
-        'Implemented circuit breakers in the data layer with Hystrix and Resilience4j to handle transient DB failures and enable automatic failover.',
-        'Mentored two interns on backend design, testing, and production readiness.',
-      ],
-      tech: ['Spring Boot', 'PostgreSQL', 'GraphQL', 'AngularJS', 'RxJS', 'WebSocket', 'JUnit', 'Resilience4j'],
+        'Implemented retry logic with exponential backoff and circuit breaker patterns on third-party payment APIs, reducing failed loan-eligibility checks from 120/day to under 10 and ensuring zero cascading failures during outages.',
+        'Integrated a Redis caching layer into the Rate Lookup service with a 60-second TTL, achieving a 92% cache hit rate and reducing average response time from 500ms to under 50ms during pre-approval flows.',
+        'Refactored a 2,400-line God-class in the Loan Origination module into focused domain-specific classes, increasing unit test coverage from 25% to 67% over three sprints.',
+        'Created Helm charts for microservices on OpenShift to standardize Kubernetes deployments across environments, resolving config drift between staging and production.',
+        'Migrated document storage from on-prem NFS to Azure Blob Storage with lifecycle tiering policies as part of a team-led cloud migration. Integrated full-text search indexing, reducing query response times from 1.8s to under 200ms on high-volume datasets.',
+        'Developed an AI-powered proof-of-concept microservice delivering sub-2 second semantic search across internal compliance documentation. Mentored 2 interns through consistent code reviews and technical guidance.',
+      ]
+    },
+    {
+      role: 'Software Developer',
+      company: 'Wells Fargo',
+      location: 'Remote',
+      duration: 'Jul 2021 – Jul 2022',
+      highlights: [
+        'Extended backend microservices with OAuth 2.0 secured endpoints and Kafka event-driven messaging, reducing manual operations tickets by 18% and eliminating peak-load timeouts across payment workflows.',
+        'Exposed GraphQL APIs and integrated third-party REST APIs to automate data retrieval, reducing manual workload for operations and underwriting teams by up to 25%.',
+        'Containerized services using Docker multi-stage builds, reducing image sizes by over 50% ahead of a Kubernetes migration.',
+        'Modernized frontend state management using Redux Toolkit across 8 components, resolving stale-state issues and actively resolved production bugs improving stability across critical financial workflows.',
+      ]
     },
     {
       role: 'Software Developer Intern',
-      company: 'One Direct Technologies',
-      location: 'Bengaluru, India',
-      duration: 'Jan 2022 – Jun 2022',
+      company: 'Wells Fargo',
+      location: 'Remote',
+      duration: 'Jan 2021 – July 2021',
       highlights: [
-        'Built proof-of-concept conversational workflows by integrating Google Dialogflow to enable intent-based support journeys and operational metrics (bot handling time, agent response time, assignment latency).',
-        'Enhanced a messaging microservice using Java, Spring Boot, RabbitMQ, Redis, and MongoDB, exposing secure, high-performance REST APIs for scalable conversational processing.',
-      ],
-      tech: ['Java', 'Spring Boot', 'RabbitMQ', 'Redis', 'MongoDB', 'Dialogflow'],
+        'Built and improved backend services including REST API development, data validation, and query optimization, measurably improving performance and reliability. Strengthened code quality by writing unit tests across null-input and boundary-value scenarios, raising test coverage.'
+      ]
     },
   ];
 
@@ -204,16 +211,18 @@ const ExperienceSection = () => {
                           </li>
                         ))}
                       </ul>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.tech.map((tech, tIndex) => (
-                          <span
-                            key={tIndex}
-                            className="skill-tag"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
+                      {Array.isArray((exp as any).tech) && (exp as any).tech.length > 0 && (
+                        <div className="flex flex-wrap gap-2">
+                          {(exp as any).tech.map((tech: string, tIndex: number) => (
+                            <span
+                              key={tIndex}
+                              className="skill-tag"
+                            >
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -222,7 +231,7 @@ const ExperienceSection = () => {
           </div>
 
           {/* Right image */}
-          <div className="hidden lg:flex items-start justify-end pt-20">
+          <div className="hidden lg:flex items-center justify-center">
             <div
               ref={imageRef}
               className="relative w-full max-w-md will-change-transform"

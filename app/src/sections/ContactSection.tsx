@@ -78,13 +78,13 @@ const ContactSection = () => {
     // Frontend-only form handling
     const subject = `Message from ${formData.name}`;
     const body = `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`;
-    window.location.href = `mailto:yashwanthcv2000@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:yashwanthveeranna26@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3000);
   };
 
   const copyEmail = () => {
-    navigator.clipboard.writeText('yashwanthcv2000@gmail.com');
+    navigator.clipboard.writeText('yashwanthveeranna26@gmail.com');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -132,7 +132,7 @@ const ContactSection = () => {
                   <div className="text-left">
                     <span className="block text-text-secondary text-sm">Email</span>
                     <span className="text-text-primary group-hover:text-accent-lime transition-colors">
-                      yashwanthcv2000@gmail.com
+                    yashwanthveeranna26@gmail.com
                     </span>
                   </div>
                   {copied ? (
@@ -170,7 +170,7 @@ const ContactSection = () => {
                   <div>
                     <span className="block text-text-secondary text-sm">Address</span>
                     <span className="text-text-primary">
-                      Sunol St, San Jose, California
+                    Concord, North Carolina
                     </span>
                   </div>
                 </div>
