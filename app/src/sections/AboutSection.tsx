@@ -117,10 +117,10 @@ const AboutSection = () => {
             {/* Body copy */}
             <div ref={bodyRef} className="space-y-5 max-w-xl">
               <p className="body-line text-text-secondary text-base md:text-lg leading-relaxed">
-                I'm a software engineer with close to 5 years of experience building and scaling backend microservices, full-stack applications, and AI-powered systems across financial services, government, and agricultural tech domains.
+                I'm a software engineer with 5 years of experience building and scaling backend microservices, full-stack applications, and AI-powered systems across financial services, government, and agricultural tech domains.
               </p>
               <p className="body-line text-text-secondary text-base md:text-lg leading-relaxed">
-                My recent focus has been on applied AI — developing RAG-based chatbots, integrating LLM fallback layers for dynamic data generation, and building document ingestion pipelines with semantic search capabilities. I enjoy bridging the gap between traditional software engineering and modern AI to solve real-world problems.
+                My recent focus has been on applied AI developing RAG-based chatbots, integrating LLM fallback layers for dynamic data generation, and building document ingestion pipelines with semantic search capabilities. I enjoy bridging the gap between traditional software engineering and modern AI to solve real-world problems.
               </p>
               <p className="body-line text-text-secondary text-base md:text-lg leading-relaxed">
                 Beyond AI, I work across the full stack as part of back-end development teams designing, developing, and deploying scalable microservices. I have hands-on experience with event-driven architectures using Kafka, securing APIs with OAuth 2.0 and JWT, optimizing performance with Redis caching, cloud deployments on Azure, and DevOps tooling including Docker, Kubernetes, CI/CD pipelines, and Git.
