@@ -29,7 +29,7 @@ const ProjectsSection = () => {
       // Headline animation
       gsap.fromTo(
         headlineRef.current,
-        { y: 18, opacity: 0 },
+        { y: 20, opacity: 0 },
         {
           y: 0,
           opacity: 1,
@@ -38,8 +38,7 @@ const ProjectsSection = () => {
           scrollTrigger: {
             trigger: section,
             start: 'top 80%',
-            end: 'top 50%',
-            scrub: 0.4,
+            once: true,
           },
         }
       );
@@ -49,19 +48,17 @@ const ProjectsSection = () => {
       if (cards) {
         gsap.fromTo(
           cards,
-          { y: 60, opacity: 0, scale: 0.98 },
+          { y: 40, opacity: 0 },
           {
             y: 0,
             opacity: 1,
-            scale: 1,
             duration: 0.6,
-            stagger: 0.1,
+            stagger: 0.08,
             ease: 'power2.out',
             scrollTrigger: {
               trigger: section,
-              start: 'top 70%',
-              end: 'top 20%',
-              scrub: 0.4,
+              start: 'top 75%',
+              once: true,
             },
           }
         );

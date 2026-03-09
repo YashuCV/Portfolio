@@ -17,85 +17,61 @@ const AboutSection = () => {
     if (!section) return;
 
     const ctx = gsap.context(() => {
-      // Headline animation
       gsap.fromTo(
         headlineRef.current,
-        { x: '-8vw', opacity: 0 },
+        { x: '-40px', opacity: 0 },
         {
           x: 0,
           opacity: 1,
-          duration: 0.8,
+          duration: 0.7,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: section,
-            start: 'top 80%',
-            end: 'top 40%',
-            scrub: 0.4,
+            start: 'top 85%',
+            once: true,
           },
         }
       );
 
-      // Image animation with parallax
       gsap.fromTo(
         imageRef.current,
-        { x: '10vw', scale: 0.98, opacity: 0 },
+        { x: '40px', opacity: 0 },
         {
           x: 0,
-          scale: 1,
           opacity: 1,
-          duration: 0.8,
+          duration: 0.7,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: section,
-            start: 'top 80%',
-            end: 'top 40%',
-            scrub: 0.4,
+            start: 'top 85%',
+            once: true,
           },
         }
       );
 
-      // Parallax on image
-      gsap.fromTo(
-        imageRef.current,
-        { y: 40 },
-        {
-          y: -40,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true,
-          },
-        }
-      );
-
-      // Body copy animation
       const bodyLines = bodyRef.current?.querySelectorAll('.body-line');
       if (bodyLines) {
         gsap.fromTo(
           bodyLines,
-          { y: 24, opacity: 0 },
+          { y: 20, opacity: 0 },
           {
             y: 0,
             opacity: 1,
             duration: 0.6,
-            stagger: 0.06,
+            stagger: 0.1,
             ease: 'power2.out',
             scrollTrigger: {
               trigger: section,
-              start: 'top 70%',
-              end: 'top 30%',
-              scrub: 0.4,
+              start: 'top 80%',
+              once: true,
             },
           }
         );
       }
 
-      // CTA animation
       gsap.fromTo(
         ctaRef.current,
-        { y: 18, opacity: 0 },
+        { y: 16, opacity: 0 },
         {
           y: 0,
           opacity: 1,
@@ -103,9 +79,8 @@ const AboutSection = () => {
           ease: 'power2.out',
           scrollTrigger: {
             trigger: section,
-            start: 'top 60%',
-            end: 'top 20%',
-            scrub: 0.4,
+            start: 'top 75%',
+            once: true,
           },
         }
       );
@@ -140,15 +115,18 @@ const AboutSection = () => {
             </h2>
 
             {/* Body copy */}
-            <div ref={bodyRef} className="space-y-6 max-w-xl">
+            <div ref={bodyRef} className="space-y-5 max-w-xl">
               <p className="body-line text-text-secondary text-base md:text-lg leading-relaxed">
-                I'm passionate about creating software that solves real problems and delivers measurable impact, whether that's helping industrial operators make faster decisions or enabling state agencies to modernize legacy processes.
+                I'm a software engineer with close to 5 years of experience building and scaling backend microservices, full-stack applications, and AI-powered systems across financial services, government, and agricultural tech domains.
               </p>
               <p className="body-line text-text-secondary text-base md:text-lg leading-relaxed">
-                I'm a Full Stack Software Engineer with 4+ years of experience turning complex challenges into solutions that people actually want to use. My experience spans distributed systems, microservices, AI integrations, and mobile development, but what truly drives me is building technology that makes a difference.
+                My recent focus has been on applied AI — developing RAG-based chatbots, integrating LLM fallback layers for dynamic data generation, and building document ingestion pipelines with semantic search capabilities. I enjoy bridging the gap between traditional software engineering and modern AI to solve real-world problems.
               </p>
               <p className="body-line text-text-secondary text-base md:text-lg leading-relaxed">
-                I believe the best technology doesn't just work well, it transforms how people work, making their jobs easier and their outcomes better.
+                Beyond AI, I work across the full stack as part of back-end development teams designing, developing, and deploying scalable microservices. I have hands-on experience with event-driven architectures using Kafka, securing APIs with OAuth 2.0 and JWT, optimizing performance with Redis caching, cloud deployments on Azure, and DevOps tooling including Docker, Kubernetes, CI/CD pipelines, and Git.
+              </p>
+              <p className="body-line text-text-secondary text-base md:text-lg leading-relaxed">
+                I thrive in diverse and collaborative environments that value quality, innovation, and ownership. I'm driven by building things that create real impact.
               </p>
             </div>
 

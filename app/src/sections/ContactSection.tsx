@@ -21,76 +21,51 @@ const ContactSection = () => {
     if (!section) return;
 
     const ctx = gsap.context(() => {
-      // Headline animation
       gsap.fromTo(
         headlineRef.current,
-        { x: '-6vw', opacity: 0 },
+        { x: '-40px', opacity: 0 },
         {
           x: 0,
           opacity: 1,
-          duration: 0.8,
+          duration: 0.7,
           ease: 'power2.out',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 80%',
-            end: 'top 40%',
-            scrub: 0.4,
-          },
+          scrollTrigger: { trigger: section, start: 'top 80%', once: true },
         }
       );
 
-      // Body animation
       gsap.fromTo(
         bodyRef.current,
-        { y: 18, opacity: 0 },
+        { y: 20, opacity: 0 },
         {
           y: 0,
           opacity: 1,
           duration: 0.6,
           ease: 'power2.out',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 70%',
-            end: 'top 30%',
-            scrub: 0.4,
-          },
+          scrollTrigger: { trigger: section, start: 'top 78%', once: true },
         }
       );
 
-      // Form animation
       gsap.fromTo(
         formRef.current,
-        { x: '10vw', opacity: 0, rotate: 1 },
+        { x: '40px', opacity: 0 },
         {
           x: 0,
           opacity: 1,
-          rotate: 0,
-          duration: 0.8,
+          duration: 0.7,
           ease: 'power2.out',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 70%',
-            end: 'top 30%',
-            scrub: 0.4,
-          },
+          scrollTrigger: { trigger: section, start: 'top 78%', once: true },
         }
       );
 
-      // Contact row animation
       gsap.fromTo(
         contactRowRef.current,
-        { y: 14, opacity: 0 },
+        { y: 16, opacity: 0 },
         {
           y: 0,
           opacity: 1,
           duration: 0.6,
           ease: 'power2.out',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top 60%',
-            end: 'top 20%',
-            scrub: 0.4,
-          },
+          scrollTrigger: { trigger: section, start: 'top 75%', once: true },
         }
       );
     }, section);

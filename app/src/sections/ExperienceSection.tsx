@@ -20,50 +20,33 @@ const ExperienceSection = () => {
       // Headline animation
       gsap.fromTo(
         headlineRef.current,
-        { x: '-6vw', opacity: 0 },
+        { x: '-40px', opacity: 0 },
         {
           x: 0,
           opacity: 1,
-          duration: 0.8,
+          duration: 0.7,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: section,
             start: 'top 80%',
-            end: 'top 40%',
-            scrub: 0.4,
+            once: true,
           },
         }
       );
 
-      // Image animation with parallax
+      // Image animation
       gsap.fromTo(
         imageRef.current,
-        { x: '10vw', opacity: 0 },
+        { x: '40px', opacity: 0 },
         {
           x: 0,
           opacity: 1,
-          duration: 0.8,
+          duration: 0.7,
           ease: 'power2.out',
           scrollTrigger: {
             trigger: section,
             start: 'top 80%',
-            end: 'top 40%',
-            scrub: 0.4,
-          },
-        }
-      );
-
-      gsap.fromTo(
-        imageRef.current,
-        { y: 30 },
-        {
-          y: -30,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: section,
-            start: 'top bottom',
-            end: 'bottom top',
-            scrub: true,
+            once: true,
           },
         }
       );
@@ -73,19 +56,17 @@ const ExperienceSection = () => {
       if (cards) {
         gsap.fromTo(
           cards,
-          { x: '-8vw', opacity: 0, rotate: -1 },
+          { x: '-40px', opacity: 0 },
           {
             x: 0,
             opacity: 1,
-            rotate: 0,
             duration: 0.6,
-            stagger: 0.12,
+            stagger: 0.1,
             ease: 'power2.out',
             scrollTrigger: {
               trigger: section,
-              start: 'top 70%',
-              end: 'top 20%',
-              scrub: 0.4,
+              start: 'top 75%',
+              once: true,
             },
           }
         );
