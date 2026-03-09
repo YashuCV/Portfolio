@@ -1,7 +1,7 @@
 import { useRef, useLayoutEffect } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { GraduationCap, ExternalLink } from 'lucide-react';
+import { GraduationCap, Award, ExternalLink } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
