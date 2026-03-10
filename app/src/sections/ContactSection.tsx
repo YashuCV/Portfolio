@@ -170,7 +170,7 @@ const ContactSection = () => {
                   <div>
                     <span className="block text-text-secondary text-sm">Address</span>
                     <span className="text-text-primary">
-                    Concord, North Carolina
+                    Unites States
                     </span>
                   </div>
                 </div>
